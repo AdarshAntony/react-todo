@@ -1,8 +1,119 @@
-.app-name {
+* {
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+} 
+.header {
+  font-size: 30px;
+  padding-bottom: 20px;
+  text-decoration: underline;
   text-align: center;
-  color: rgb(0, 162, 255);
+}
+.Home-body {
+  height: 100vh;
+  background-color: orange;
+  text-align: center;
+}
+
+.List-items , .form-body{
+  position: fixed;
+  background-color: white;
+  border: solid 1px white;
+  overflow-y: scroll;
+  height: 400px;
+  width: 80%;
+  margin: auto;
+  border-radius: 30px;
+  padding: auto;
+  padding-top: 5%;
+  text-align: center;
+  color: black;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 10px;
+}
+
+.task-div {
+  display: flex;
+  padding-top: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-bottom: 2px solid orange;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.task-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.task-edit-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.input-container input {
+  height: 30px;
+  width: 450px;
+  border: none;
+}
+
+.edit-btns {
+  background-color: orange;
+  border: none;
+  color: white;
+  height: 30px;
+  width: 70px;
+  margin-right: 41px;
+}
+
+
+
+.List-items .noItem-h1 {
+  font-size: 100px;
+}
+
+.List-items p {
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.create-task-btn {
+  background-color: orange;
+  color: white;
+  margin-top: 20px;
+  font-size: 15px;
+  height: 40px;
+  width: 150px;
+  border: orange;
+  border-radius: 100px;
+  transition: .5s ease-in-out;
+}
+
+.create-task-btn:hover {
+  background-color: white;
+  border: solid 2px orange;
+  color: orange;
+  margin-top: 30px;
+  height: 50px;
+}
+
+.page-name {
+  text-align: center;
   font-family: Georgia;
-  font-size: larger;
 }
 
 .completed-task {
@@ -11,4 +122,81 @@
 
 .avoid-btns { 
   display: none;
+}
+
+.hidden-thing {
+  display: none;
+}
+
+.toggle-btns {
+  background: none;
+  border: none;
+  padding-left: 10px;
+}
+
+.toggle-btns:hover {
+  font-size: 20px;
+}
+
+.createTask-body { 
+  height: 100vh;
+  background-color: orange;
+  overflow: hidden;
+}
+
+.form-body .form-head {
+  font-size: 100px;
+}
+
+.form-body input {
+  height: 30px;
+  width: 400px;
+  outline: none;
+  padding-left: 10px;
+  border: none;
+}
+
+.form {
+  border: solid 2px orange;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.form button {
+  border: solid 2px orange;
+  background-color: orange;
+  color: white;
+  height: 30px;
+  width: 87.5px;
+}
+
+.form button:hover {
+  cursor: pointer;
+}
+
+.home-btn {
+  margin-top: 20px;
+  border: none;
+  background-color: white;
+  color: orange;
+  transition: .5s ease-in-out;
+}
+
+.home-btn:hover {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@media (max-width:991px) {
+  .List-items , .form-body{
+    width: 99%;
+    margin: auto;
+    border-radius: 30px;
+    top: 50%;
+    bottom: 50%;
+  }
+  .task-div {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
