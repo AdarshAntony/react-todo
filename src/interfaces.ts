@@ -1,4 +1,5 @@
 export interface ITask {
-    id:number;
+    id:string;
     taskName:string;
+    completed:false
 }
