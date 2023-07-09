@@ -15,6 +15,8 @@ export const TodoTask = ({ setTodoList, todoList, task, taskName }: Props) => {
   const [completed, setCompleted] = useState<boolean>(false);
   const [newTaskName, setNewTaskName] = useState<string>('');
 
+  let errorMessage = " ";
+
   useEffect(() => {
     setCompleted(task.completed);
   }, [task.completed]);
@@ -30,6 +32,11 @@ export const TodoTask = ({ setTodoList, todoList, task, taskName }: Props) => {
   };
 
   const updateTask = async () => {
+    if (!newTaskName) {
+      errorMessage = "New task name is required in order to change current task name.";
+      console.log(errorMessage);
+      return
+    }
     try {
       const docRef = doc(db, 'todo', task.id);
       await updateDoc(docRef, { taskName: newTaskName });
@@ -59,15 +66,19 @@ export const TodoTask = ({ setTodoList, todoList, task, taskName }: Props) => {
   return (
     <div className='task-div'>
       {todoList && edit ? (
+        <div>
+          {!newTaskName && <span className="error-message">Task name cannot be empty</span>}
         <div className='task-edit-div'>
-        <div className="input-container">
-          <input type='text' value={newTaskName} placeholder='Enter new taskname......' onChange={handleInputChange} />
+            <div className="input-container">
+              <input type='text' value={newTaskName} placeholder='Enter new taskname......' onChange={handleInputChange} />
+            </div>
+            <div className="button-container">
+              <button className="edit-btns" onClick={updateTask}>Update</button>
+              <button className="edit-btns" onClick={() => setEdit(false)}>Cancel</button>
+            </div>
+            
+          </div>
         </div>
-        <div className="button-container">
-          <button className="edit-btns" onClick={updateTask}>Update</button>
-          <button className="edit-btns" onClick={() => setEdit(false)}>Cancel</button>
-        </div>
-      </div>
       ) : (
         <div className='task-list'>
           <div>
