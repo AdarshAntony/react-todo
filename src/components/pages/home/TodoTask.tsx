@@ -66,9 +66,8 @@ export const TodoTask = ({ setTodoList, todoList, task, taskName }: Props) => {
   return (
     <div className='task-div'>
       {todoList && edit ? (
-        <div>
-          {!newTaskName && <span className="error-message">Task name cannot be empty</span>}
-        <div className='task-edit-div'>
+          <>
+          <div className='task-edit-div'>
             <div className="input-container">
               <input type='text' value={newTaskName} placeholder='Enter new taskname......' onChange={handleInputChange} />
             </div>
@@ -78,7 +77,8 @@ export const TodoTask = ({ setTodoList, todoList, task, taskName }: Props) => {
             </div>
             
           </div>
-        </div>
+          {!newTaskName && <span className="error-message">Task name cannot be empty</span>}
+          </>
       ) : (
         <div className='task-list'>
           <div>
