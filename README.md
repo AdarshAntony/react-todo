@@ -1,3 +1,31 @@
+# New changes made
+Before getting started you need to configure firebase. follow the instructions given below
+
+Go to [firebase.com](https://firebase.google.com/)
+Click on get started and add a project 
+Disable google analistyic report for the project (you can find the toggle icon during the steps of creating new project)
+Now you will be redirected to your project homepage.
+There you can see "add an app to get started" click the web icon to add a web app
+Follow the instructions showed there and copy your config code and paste it to the file named firebase.ts(src\components\config\firebase.ts).
+
+Then at the homepage click on cloud firestore.
+Click on create database.
+Click production mode and click next.
+Select cloud firestore location.
+
+Then click on start collection.
+Name the collection id as todo
+For document id click on auto id
+Then for the filed add field name as "taskName" and type as "string" then put a "random_value".
+Then create another field by clicking the + icon and name it as "id" "number" "random_value"
+Then create another field by clicking the + icon and name it as "completed" "boolean" "random_value"
+(avoid quotes) 
+Thats it t=now click on save.
+
+Your project database is ready now.
+
+Install the package named uuid through terminal in your code.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
